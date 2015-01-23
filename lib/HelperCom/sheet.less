@@ -4,22 +4,27 @@
 table.sheet{
     border-collapse: collapse;
     tr{
-        &:nth-child(2n){
-            td:nth-child(2n+1){
-                background-color: @darkColor;
-            }
-        }
-        &:nth-child(2n+1){
-            td:nth-child(2n){
-                background-color: @darkColor;
-            }
-        }
-
         td{
             height: 40px;
             width: 40px;
             border: 1px dashed #ccc;
             background-color: @defaultColor;
+        }
+    }
+    
+    // 奇偶异色
+    &.sheet-striped{
+        tr{
+            &:nth-child(2n){
+                td:nth-child(2n+1){
+                    background-color: @darkColor;
+                }
+            }
+            &:nth-child(2n+1){
+                td:nth-child(2n){
+                    background-color: @darkColor;
+                }
+            }
         }
     }
 }
