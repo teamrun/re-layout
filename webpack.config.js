@@ -6,14 +6,14 @@ var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 
 module.exports = {
     entry: {
-        demo: ['./example/demo']
+        app: ['./lib/app']
         // markdown: ['./index']
     },
     output: {
-        path: path.join(__dirname, 'example/dist') ,
+        path: path.join(__dirname, 'lib') ,
         filename: "[name]-bundle.js",
         // 打包好的文件 作为静态资源的基础路径
-        publicPath: '/example/dist/'
+        publicPath: '/lib/'
     },
     plugins: [
         // new CommonsChunkPlugin("share.js"),

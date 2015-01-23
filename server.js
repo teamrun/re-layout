@@ -2,12 +2,12 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config');
 
-var port = 3005;
+var port = 3015;
 // for develop
 config.devtool = 'source-map';
 // for hot replacement
 for( var i in config.entry ){
-    config.entry[i].unshift('webpack-dev-server/client?http://0.0.0.0:3005');
+    config.entry[i].unshift('webpack-dev-server/client?http://0.0.0.0:'+port);
     config.entry[i].unshift('webpack/hot/only-dev-server');
 }
 
@@ -30,4 +30,5 @@ new WebpackDevServer(webpack(config), {
     }
 
     console.log('Listening at 0.0.0.0:', port);
+    console.log('Open:\n\t'+'http://localhost:'+port+'\nto see');
 });
